@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrapper">
+    <header class="header">
+      <h1>Currency Converter</h1>
+      <p class="subtitle">Japan &bull; India &bull; US &bull; UAE &bull; China &bull; Korea &bull; UK &bull; Africa &bull; Egypt &bull; Russia &bull; Norway</p>
+    </header>
+
+    <section class="card" aria-label="Converter">
+      <label class="field">
+        <span>Amount</span>
+        <input type="number" id="amount" value="100" min="0" step="any" inputmode="decimal" />
+      </label>
+
+      <div class="row">
+        <label class="field">
+          <span>From</span>
+          <select id="fromCurrency"></select>
+        </label>
+
+        <button type="button" id="swapBtn" class="swap" title="Swap currencies" aria-label="Swap currencies">&#8644;</button>
+
+        <label class="field">
+          <span>To</span>
+          <select id="toCurrency"></select>
+        </label>
+      </div>
+
+      <p id="error" class="error" role="alert" hidden></p>
+
+      <div class="result" aria-live="polite">
+        <p id="resultFrom" class="result-from">&nbsp;</p>
+        <p id="resultTo" class="result-to">&nbsp;</p>
+        <p id="resultRate" class="result-rate">&nbsp;</p>
+      </div>
+
+      <div class="status-row">
+        <span id="status" class="status">Loading rates...</span>
+        <button type="button" id="refreshBtn" class="link-btn">Refresh rates</button>
+      </div>
+    </section>
+
+    <section class="card" aria-label="All rates">
+      <h2 id="ratesTitle">Rates</h2>
+      <ul id="ratesList" class="rates"></ul>
+    </section>
+
+    <footer class="footer">
+      Live rates come from open.er-api.com. If you are offline, built-in sample rates are used.
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
